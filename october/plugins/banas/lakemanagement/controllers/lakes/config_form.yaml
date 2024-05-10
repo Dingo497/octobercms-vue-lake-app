@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Lake
+
+# Model Form Field configuration
+form: $/banas/lakemanagement/models/lake/fields.yaml
+
+# Model Class name
+modelClass: Banas\LakeManagement\Models\Lake
+
+# Default redirect location
+defaultRedirect: banas/lakemanagement/lakes
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: banas/lakemanagement/lakes/update/:id
+    redirectClose: banas/lakemanagement/lakes
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: banas/lakemanagement/lakes
+    redirectClose: banas/lakemanagement/lakes
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

@@ -1,0 +1,5 @@
+v1.0.1: First version of LakeManagement
+v1.0.2:
+    - 'Created table lakes and seeder'
+    - create_lakes_table.php
+    - seeder\SeedLakesTable.php

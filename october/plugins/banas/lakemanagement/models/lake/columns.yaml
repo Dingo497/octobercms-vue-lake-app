@@ -1,0 +1,17 @@
+columns:
+    id:
+        label: ID
+        searchable: true
+    name:
+        label: Názov
+        searchable: true
+        type: text
+    depth:
+        label: Hĺbka
+        searchable: false
+        type: text
+    area:
+        label: Rozloha
+        searchable: false
+        type: text
+

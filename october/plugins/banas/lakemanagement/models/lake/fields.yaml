@@ -1,0 +1,27 @@
+tabs:
+    fields:
+        name:
+            label: Názov
+            span: left
+            type: text
+            tab: 'Jazerá'
+        depth:
+            label: Hĺbka
+            span: right
+            type: text
+            tab: 'Jazerá'
+        area:
+            label: Rozloha
+            span: right
+            type: text
+            tab: 'Jazerá'
+        description:
+            label: Popis
+            span: left
+            type: textarea
+            tab: 'Jazerá'
+        image:
+            label: Obrázok
+            span: right
+            type: mediafinder
+            tab: 'Jazerá'
