@@ -53,15 +53,35 @@ class Lakes extends Controller
      * Display a list of lakes
      * @param Request $request
      */
-    public function index(Request $request): JsonResponse {
+    public function ApiIndex(Request $request): JsonResponse {
         $page = $request->input('page', 1);
-        $perPage = $request->input('perPage', 5);
+        $perPage = $request->input('perPage', 10);
+        $sort = $request->input('sort', 'id,asc');
+        $search = $request->input('search', '');
 
         Paginator::currentPageResolver(function() use ($page) {
             return $page;
         });
 
-        $lakes = Lake::paginate($perPage);
+        list($sortColumn, $sortDirection) = explode(',', $sort);
+
+        if (!in_array($sortDirection, ['asc', 'desc'])) {
+            $sortDirection = 'asc';
+        }
+
+        $query = Lake::query();
+        
+        if (!empty($search)) {
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+
+        $query->orderBy($sortColumn, $sortDirection);
+
+        $lakes = $query->paginate($perPage);
+
+        foreach ($lakes as $key => $lake) {
+            $lakes[$key]->image = $lake->image ? asset('storage/app/media' . $lake->image) : null;
+        }
 
         return response()->json($lakes);
     }

@@ -21,8 +21,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('image')->nullable(); 
             $table->text('description');
-            $table->string('depth');
-            $table->string('area');
+            $table->float('depth');
+            $table->string('depth_unit')->default('m');
+            $table->float('area');
+            $table->string('area_unit')->default('km');
             $table->timestamps();
         });
     }

@@ -12,12 +12,12 @@ class SeedLakesTable extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             Lake::create([
                 'name' => $faker->word(),
-                'depth' => strval($faker->randomFloat(2, 0, 100)) . ' m',
-                'area' => strval($faker->randomFloat(2, 0, 500)) . ' km',
-                'description' => $faker->words(12, true),
+                'depth' => $faker->randomFloat(2, 0, 100),
+                'area' => $faker->randomFloat(2, 0, 500),
+                'description' => $faker->words(16, true),
                 'image' => null,
             ]);
         }

@@ -1,11 +1,28 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+    <div
+        class="leading-normal tracking-normal text-indigo-400 bg-cover bg-fixed"
+        :style="{ backgroundImage: `url(${require('@/assets/imgs/header.png')})` }"
+    >
+        <NavigationComponent />
+        <div
+            class="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center"
+        >
+            <router-view />
+        </div>
+        <FooterComponent />
+    </div>
 </template>
 
-<style lang="scss">
+<script lang="ts">
+import { defineComponent } from "vue";
+import NavigationComponent from "@/components/NavigationComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
 
-</style>
+export default defineComponent({
+    name: "App",
+    components: {
+        NavigationComponent,
+        FooterComponent,
+    },
+});
+</script>

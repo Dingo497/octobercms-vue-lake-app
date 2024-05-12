@@ -3,3 +3,11 @@ v1.0.2:
     - 'Created table lakes and seeder'
     - create_lakes_table.php
     - seeder\SeedLakesTable.php
+v1.0.3:
+    - 'Modified table lakes and seeder'
+    - create_lakes_table.php
+    - seeder\SeedLakesTable.php
+v1.0.4:
+    - 'Modified v2 table lakes and seeder'
+    - create_lakes_table.php
+    - seeder\SeedLakesTable.php

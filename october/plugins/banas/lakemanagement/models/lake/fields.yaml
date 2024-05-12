@@ -10,18 +10,34 @@ tabs:
             span: right
             type: text
             tab: 'Jazerá'
-        area:
-            label: Rozloha
-            span: right
-            type: text
-            tab: 'Jazerá'
         description:
             label: Popis
             span: left
             type: textarea
             tab: 'Jazerá'
+        depth_unit:
+            label: Jednotka merania pre hĺbku
+            type: dropdown
+            span: right
+            tab: 'Jazerá'
+            options:
+                m: m
+                ft: ft
+        area:
+            label: Rozloha
+            span: right
+            type: text
+            tab: 'Jazerá'
+        area_unit:
+            label: Jednotka merania pre rozlohu
+            type: dropdown
+            span: right
+            tab: 'Jazerá'
+            options:
+                km: km
+                mi: mi
         image:
             label: Obrázok
-            span: right
+            span: left
             type: mediafinder
             tab: 'Jazerá'

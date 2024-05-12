@@ -22,6 +22,13 @@ class Lake extends Model
      */
     protected $fillable = ['name', 'depth', 'area', 'description', 'image'];
 
+    /**
+     * @var array cast dates attributes
+     */
+    protected $casts = [
+        'created_at' => 'date:d.m.Y',
+        'updated_at' => 'date:d.m.Y',
+    ];
 
     /**
      * @var array rules for validation
