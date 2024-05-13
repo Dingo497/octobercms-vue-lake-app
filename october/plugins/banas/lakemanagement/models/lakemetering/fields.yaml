@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    lake:
+        label: Jazero
+        searchable: true
+        type: relation
+        nameFrom: name
+    temperature:
+        label: Teplota
+        searchable: true
+        type: datepicker
+        mode: date
+    description:
+        label: Popis
+        span: left
+        type: textarea
+        tab: 'Jazerá'

@@ -62,7 +62,7 @@ export default defineComponent({
                 } else {
                     store.dispatch("fetch" + props.collectionName);
                 }
-            }, 500);
+            }, 400);
         });
 
         const table = reactive({

@@ -87,6 +87,12 @@ class Plugin extends PluginBase
                         'url' => Backend::url('banas/lakemanagement/lakes'),
                         'permissions' => ['banas.lakemanagement.*'],
                     ],
+                    'lakeMeterings' => [
+                        'label' => 'Merania jazier',
+                        'icon' => 'icon-thermometer-4',
+                        'url' => Backend::url('banas/lakemanagement/lakemeterings'),
+                        'permissions' => ['banas.lakemanagement.*'],
+                    ],
                 ]
             ]
         ];

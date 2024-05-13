@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 import LakesPage from '../views/LakesPage.vue'
-import MeteringsPage from '../views/MeteringsPage.vue'
+import LakesMeteringsPage from '../views/LakesMeteringsPage.vue'
 import AboutPage from '../views/AboutPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -11,9 +11,9 @@ const routes: Array<RouteRecordRaw> = [
         component: LakesPage
     },
     {
-        path: '/meterings',
-        name: 'meterings',
-        component: MeteringsPage
+        path: '/lakes-meterings',
+        name: 'lakesMeterings',
+        component: LakesMeteringsPage
     },
     {
         path: '/about',

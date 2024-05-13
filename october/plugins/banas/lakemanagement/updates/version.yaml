@@ -2,12 +2,8 @@ v1.0.1: First version of LakeManagement
 v1.0.2:
     - 'Created table lakes and seeder'
     - create_lakes_table.php
-    - seeder\SeedLakesTable.php
+    - seeders\SeedLakesTable.php
 v1.0.3:
-    - 'Modified table lakes and seeder'
-    - create_lakes_table.php
-    - seeder\SeedLakesTable.php
-v1.0.4:
-    - 'Modified v2 table lakes and seeder'
-    - create_lakes_table.php
-    - seeder\SeedLakesTable.php
+    - 'Created table lake_meterings and seeder'
+    - create_lake_meterings_table.php
+    - seeders\SeedLakeMeteringsTable.php

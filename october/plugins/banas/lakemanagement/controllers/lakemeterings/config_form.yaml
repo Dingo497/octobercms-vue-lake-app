@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Lake Metering
+
+# Model Form Field configuration
+form: $/banas/lakemanagement/models/lakemetering/fields.yaml
+
+# Model Class name
+modelClass: Banas\LakeManagement\Models\LakeMetering
+
+# Default redirect location
+defaultRedirect: banas/lakemanagement/lakemeterings
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: banas/lakemanagement/lakemeterings/update/:id
+    redirectClose: banas/lakemanagement/lakemeterings
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: banas/lakemanagement/lakemeterings
+    redirectClose: banas/lakemanagement/lakemeterings
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

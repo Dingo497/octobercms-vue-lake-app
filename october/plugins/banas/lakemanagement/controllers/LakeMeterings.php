@@ -5,38 +5,35 @@ use Backend\Classes\Controller;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use Banas\LakeManagement\Models\Lake;
+use Banas\LakeManagement\Models\LakeMetering;
+
 
 /**
- * Lakes Backend Controller
+ * Lake Meterings Backend Controller
  *
  * @link https://docs.octobercms.com/3.x/extend/system/controllers.html
  */
-class Lakes extends Controller
+class LakeMeterings extends Controller
 {
     public $implement = [
         \Backend\Behaviors\FormController::class,
         \Backend\Behaviors\ListController::class,
     ];
 
-
     /**
      * @var string formConfig file
      */
     public $formConfig = 'config_form.yaml';
-
 
     /**
      * @var string listConfig file
      */
     public $listConfig = 'config_list.yaml';
 
-
     /**
      * @var array required permissions
      */
-    public $requiredPermissions = ['banas.lakemanagement.lakes'];
-
+    public $requiredPermissions = ['banas.lakemanagement.lakemeterings'];
 
     /**
      * __construct the controller
@@ -45,12 +42,11 @@ class Lakes extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Banas.LakeManagement', 'lakemanagement', 'lakes');
+        BackendMenu::setContext('Banas.LakeManagement', 'lakemanagement', 'lakemeterings');
     }
 
-
     /**
-     * Display a list of lakes
+     * Display a list of lakes meterings
      * @param Request $request
      */
     public function ApiIndex(Request $request): JsonResponse {
@@ -69,23 +65,23 @@ class Lakes extends Controller
             $sortDirection = 'asc';
         }
 
-        $query = Lake::query();
+        $query = LakeMetering::query();
         
         if (!empty($search)) {
-            $query->where('name', 'like', '%' . $search . '%');
+            $query->whereHas('lake', function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%');
+            });
         }
+
+        $query->with('lake');
 
         $query->orderBy($sortColumn, $sortDirection);
 
-        $lakes = $query->paginate($perPage);
-
-        foreach ($lakes as $key => $lake) {
-            $lakes[$key]->image = $lake->image ? asset('storage/app/media' . $lake->image) : null;
-        }
+        $lakesMeterings = $query->paginate($perPage);
 
         return response()->json([
-            'data' => $lakes->items(),
-            'total' => $lakes->total()
+            'data' => $lakesMeterings->items(),
+            'total' => $lakesMeterings->total()
         ]);
     }
 }

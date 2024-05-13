@@ -9,9 +9,15 @@ columns:
     depth:
         label: Hĺbka
         searchable: false
-        type: text
+        type: number
+        select: depth
+        valueFrom: formattedDepth
+        sortable: false
     area:
         label: Rozloha
         searchable: false
-        type: text
+        type: number
+        select: area
+        valueFrom: formattedArea
+        sortable: false
 

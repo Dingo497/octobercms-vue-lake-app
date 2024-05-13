@@ -17,22 +17,22 @@
                 <div class="flex w-1/2 justify-evenly content-center">
                     <router-link
                         class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-3 px-3 mt-2 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                        :class="{ active: $route.path === '/' }"
-                        to="/"
+                        :class="{ active: $route.name === 'lakes' }"
+                        :to="{ name: 'lakes' }"
                     >
                         Lakes
                     </router-link>
                     <router-link
                         class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-3 px-3 mt-2 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                        :class="{ active: $route.path === '/meterings' }"
-                        to="/meterings"
+                        :class="{ active: $route.name === 'lakesMeterings' }"
+                        :to="{ name: 'lakesMeterings' }"
                     >
                         Meterings
                     </router-link>
                     <router-link
                         class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-3 px-3 mt-2 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                        :class="{ active: $route.path === '/about' }"
-                        to="/about"
+                        :class="{ active: $route.name === 'about' }"
+                        :to="{ name: 'about' }"
                     >
                         About
                     </router-link>

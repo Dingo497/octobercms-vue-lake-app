@@ -1,0 +1,25 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    lake:
+        label: Jazero
+        searchable: true
+        relation: lake
+        select: name
+    temperature:
+        label: Teplota
+        searchable: true
+        type: number
+        format: "%.2f °C"
+    measured_at: 
+        label: Dátum merania
+        searchable: true
+        type: datetime
+        format: l jS \of F Y h:i:s A
+
+
