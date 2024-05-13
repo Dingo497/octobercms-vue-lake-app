@@ -13,10 +13,10 @@ export interface IAlert {
 }
 
 export interface IApiTableAttributes {
-    ?page: number;
-    ?perPage: number;
-    ?sort: string;
-    ?search: string;
+    page?: number;
+    perPage?: number;
+    sort?: string;
+    search?: string;
 }
 
 export interface IApiPaginationLink {
@@ -24,3 +24,11 @@ export interface IApiPaginationLink {
     label: string;
     active: boolean;
 };
+
+export interface ITableColumn {
+    label: string;
+    field: string;
+    sortable: boolean;
+    width: string;
+    isKey?: boolean;
+}

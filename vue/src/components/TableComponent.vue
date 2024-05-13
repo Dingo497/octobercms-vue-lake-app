@@ -16,10 +16,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, computed, props, onMounted, ref, watch } from "vue";
+import {
+    defineComponent,
+    reactive,
+    computed,
+    PropType,
+    onMounted,
+    ref,
+    watch,
+} from "vue";
 import axios from "axios";
 import VueTableLite from "vue3-table-lite/ts";
 import { useStore } from "vuex";
+import { ITableColumn } from "@/types/general";
 
 export default defineComponent({
     name: "Table",
@@ -27,11 +36,11 @@ export default defineComponent({
 
     props: {
         collectionName: {
-            type: String,
+            type: String as PropType<string>,
             required: true,
         },
         columns: {
-            type: Array,
+            type: Array as PropType<ITableColumn[]>,
             required: true,
         },
     },
@@ -53,7 +62,7 @@ export default defineComponent({
             return store.getters[getterName].total;
         });
 
-        let timeout = null;
+        let timeout: any = null;
         watch(searchInput, (newValue) => {
             clearTimeout(timeout);
             timeout = setTimeout(() => {
@@ -79,7 +88,7 @@ export default defineComponent({
         /**
          * Table search event
          */
-        const doSearch = (offset, limit, order, sort) => {
+        const doSearch = (offset: number, limit: number, order: string, sort: string) => {
             table.isLoading = true;
 
             if (offset === 0) {
@@ -98,7 +107,7 @@ export default defineComponent({
         /**
          * Table search finished event
          */
-        const tableLoadingFinish = (elements) => {
+        const tableLoadingFinish = () => {
             table.isLoading = false;
         };
 

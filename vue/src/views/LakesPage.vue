@@ -33,6 +33,7 @@
 <script lang="ts">
 import { defineComponent, onMounted, computed } from "vue";
 import TableComponent from "@/components/TableComponent.vue";
+import { ITableColumn } from "@/types/general";
 
 export default defineComponent({
     name: "LakesPage",
@@ -41,7 +42,7 @@ export default defineComponent({
     },
 
     setup() {
-        const tableColumns = [
+        const tableColumns: ITableColumn[] = [
             {
                 label: "ID",
                 field: "id",
