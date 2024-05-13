@@ -34,12 +34,16 @@
         }
     }
 }```
-6. composer install
-7. php artisan october:migrate
-8. php artisan serve
-9. cd .. a cd vue
-10. npm install
-11. npm run serve
+6. composer install  
+7. php artisan october:migrate  
+8. php artisan key:generate
+9. php artisan serve  
+10. cd .. a cd vue  
+11. npm install  
+12. npm run serve  
+
+- Následne sa treba presmerovať na BE: http://127.0.0.1:8000/admin kde si vytvoríš konto
+- V settings->frontend themes treba aktivovať dostupnú tému (nieje to potrebne je to len kvoli redirect-u na BE portoch...)
 
 
 
